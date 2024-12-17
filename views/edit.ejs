@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+
+    <div class="min-w-full h-full bg-zinc-800 p-10 text-white">
+
+        <div class="mb-5">
+            <a href="/read" class="mb-3 capitalize text-blue-500">back to read users</a>
+        </div>
+        <div class="mb-10">
+            <a href="/" class="mb-3 capitalize text-blue-500">back to home</a>
+        </div>
+        
+        <h1 class="text-3xl tracking-tighter">Update User</h1>
+        <form action="/update/<%= user._id %>" method="post" class="sm:flex items-center gap-3">
+            <div>
+                <input 
+                type="text"
+                placeholder="Name"
+                name="name"
+                value="<%= user.name %>"
+                class="px-4 py-2 outline-none bg-transparent border-2 border-zinc-700 rounded-md w-full md:w-fit"
+                >
+            </div>
+            <div class="my-5">
+                <input 
+                type="email"
+                placeholder="Email"
+                name="email"
+                value="<%= user.email %>"
+                class="px-4 py-2 outline-none bg-transparent border-2 border-zinc-700 rounded-md w-full md:w-fit"
+                >
+            </div>
+            <div class="my-5">
+                <input 
+                type="text"
+                placeholder="Image url"
+                name="image"
+                value="<%= user.image %>"
+                class="px-4 py-2 outline-none bg-transparent border-2 border-zinc-700 rounded-md w-full md:w-fit"
+                >
+            </div>
+            <div>
+                <input 
+                type="submit"
+                value="Update User"
+                class="px-4 py-2 outline-none bg-yellow-500 text-black font-bold rounded-lg cursor-pointer w-full md:w-fit"
+                >
+            </div>
+        </form>
+    </div>
+
+    <script src="/javascripts/script.js"></script>
+</body>
+</html>
